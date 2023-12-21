@@ -81,3 +81,4 @@
 #                     ulm_card_battery_battery_state_entity_id: "this.entity_id"
 #                     ulm_card_battery_battery_level_danger: 30
 #                     ulm_card_battery_battery_level_warning: 80
+#

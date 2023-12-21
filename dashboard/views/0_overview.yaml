@@ -17,7 +17,7 @@
               icon:
               color: purple
             entity_2:
-              entity_id: switch.gaming_pc_wake_on_lan
+              entity_id: switch.skullpluggery_pc_wake_on_lan
               name: Game
               icon:
               color: red
@@ -54,18 +54,13 @@
           variables:
             ulm_card_person_entity: person.lyle
             ulm_card_person_use_entity_picture: true
-            ulm_card_person_zones:
-              - zone.manulife
-            ulm_address: sensor.pixel_6_pro_geocoded_location
+            ulm_address: device_tracker.lyle_vinces_iphone
         - type: "custom:button-card"
           template: custom_card_rairulyle_person
           variables:
             ulm_card_person_entity: person.marga
             ulm_card_person_use_entity_picture: true
-            ulm_card_person_zones:
-              - zone.malayan_colleges_laguna
-              - zone.marga_home
-            ulm_address: device_tracker.xiaomi_mi_10t_5g
+            ulm_address: device_tracker.pixel_6_pro
         - type: "custom:button-card"
           template: card_title
           name: 🌡️ Room Thermostat
@@ -114,7 +109,7 @@
               template: card_graph
               entity: sensor.speedtest_ping
               variables:
-                ulm_card_graph_color: "var(--google-blue)"
+                ulm_card_graph_color: "var(--google-yellow)"
                 ulm_card_graph_name: Ping
                 ulm_card_graph_entity: sensor.speedtest_ping
                 ulm_card_graph_type: fill
@@ -132,7 +127,7 @@
               template: card_graph
               entity: sensor.speedtest_upload
               variables:
-                ulm_card_graph_color: "var(--google-blue)"
+                ulm_card_graph_color: "var(--google-violet)"
                 ulm_card_graph_name: Upload
                 ulm_card_graph_entity: sensor.speedtest_upload
                 ulm_card_graph_type: fill
@@ -142,20 +137,16 @@
         - type: "custom:button-card"
           template: card_title
           name: 🛋️ Main Room
-        - type: grid
-          square: false
-          columns: 2
-          cards:
-            - type: "custom:button-card"
-              template: card_input_boolean
-              entity: input_boolean.aircon_toggle
-              variables:
-                ulm_card_input_boolean_name: Aircon
-                ulm_card_input_boolean_icon: mdi:air-conditioner
-            - type: "custom:button-card"
-              template: custom_card_rairulyle_diffuser
-              entity: humidifier.main_room_diffuser
-              name: Diffuser
+        # - type: grid
+        #   square: false
+        #   columns: 2
+        #   cards:
+        - type: "custom:button-card"
+          template: card_input_boolean
+          entity: input_boolean.aircon_toggle
+          variables:
+            ulm_card_input_boolean_name: Aircon
+            ulm_card_input_boolean_icon: mdi:air-conditioner
         - type: custom:button-card
           template: custom_card_saxel_fan
           entity: fan.bedroom_standing_fan_pro
@@ -166,7 +157,6 @@
         - type: "custom:button-card"
           template: card_vacuum
           entity: vacuum.ijai_v3_aaa0_robot_cleaner
-
         # # Kitchen
         # - type: "custom:button-card"
         #   template: card_title
@@ -188,10 +178,16 @@
         #         ulm_card_light_name: Led Light
         #         ulm_card_light_icon: mdi:led-strip-variant
 
-        # # Bedroom
-        # - type: "custom:button-card"
-        #   template: card_title
-        #   name: 🛏️ Bedroom
+        # Bedroom
+        - type: "custom:button-card"
+          template: card_title
+          name: 🛏️ Bedroom
+        - type: "custom:button-card"
+          template: card_light
+          entity: switch.bedroom_lamp_socket
+          variables:
+            ulm_card_light_name: Lamp
+            ulm_card_light_icon: mdi:floor-lamp
         # - type: custom:button-card
         #   template: custom_card_saxel_fan
         #   entity: fan.bedroom_standing_fan_pro
@@ -203,13 +199,13 @@
         #   square: false
         #   columns: 2
         #   cards:
-        #     - type: "custom:button-card"
-        #       template: card_power_outlet
-        #       entity: switch.bedroom_aircon_plug_socket_1
-        #       variables:
-        #         ulm_card_power_outlet_name: Aircon
-        #         ulm_card_power_outlet_icon: mdi:air-conditioner
-        #         ulm_card_power_outlet_consumption_sensor: sensor.bedroom_aircon_plug_power
+        # - type: "custom:button-card"
+        #   template: card_power_outlet
+        #   entity: switch.bedroom_aircon_plug_socket_1
+        #   variables:
+        #     ulm_card_power_outlet_name: Aircon
+        #     ulm_card_power_outlet_icon: mdi:air-conditioner
+        #     ulm_card_power_outlet_consumption_sensor: sensor.bedroom_aircon_plug_power
         #     - type: "custom:button-card"
         #       template: custom_card_rairulyle_light
         #       entity: switch.bedroom_led_light_socket_1
